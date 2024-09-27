@@ -12,16 +12,47 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.clevertap.ctpush",
+      "buildNumber": "1.0.0",
+      "teamId": "G9355AB4R7",
+      "supportsTablet": true,
+      "infoPlist": {
+        "CleverTapAccountID": "TEST-RZ5-4WZ-9W7Z",
+        "CleverTapToken": "TEST-104-512"
+      }
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.clevertap.ctpush"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "./plugins/withCTManifestAndroid.js",
+      "./plugins/withCTPodIOS.js",
+      "./plugins/withCTAppDelegateIOS.js",
+      "./plugins/withCTApplicationClassAndroid.js",
+      [
+        "expo-android-app-gradle-dependencies",
+        {
+          "spacing": "    ",
+          "dependencies": [
+            "com.clevertap.android:clevertap-android-sdk:6.2.1",
+            "com.clevertap.android:push-templates:1.2.3",
+            "com.squareup.okhttp3:okhttp:5.0.0-alpha.11",
+            "com.squareup.okhttp3:okhttp-urlconnection:5.0.0-alpha.11"
+          ]
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "27cff4da-ddfa-440f-bff8-860aaf072392"
+      }
     }
   }
 }
